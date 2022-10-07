@@ -20,6 +20,13 @@
     #categoria-form, #edit-form, #todo-form{
         max-width: 70%;
     }
+    #create-task{
+        bottom: 15vh;
+        left: 75vw;
+    }
+    .forms{
+        bottom: 0;
+    }
 
    
 }
