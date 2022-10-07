@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Lista de tarefas</title>
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <div class="todo-container">
         <header><!--======================================= INICIO HEADER ===============================================================-->
             <h1>Lista de tarefas</h1>
@@ -85,17 +85,11 @@
 
     </div>
     <script src="projetoTarefas.js"></script>
-    <!-- <script>
-        const element = document.getElementById('todo-form');
-    
-            function mudouTamanho(){
-            if(window.innerWidth >= 768){
-                element.style.display ='flex';
-           
-            }else{
-                element.style.display = 'none';
-            }
+    <script>
+        function mudouTamanho(){
+           const footer = document.querySelector('.forms');
+           footer.style.bottom = '10vh';
         }
-    </script> -->
+    </script>
 </body>
 </html>
