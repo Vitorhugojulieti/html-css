@@ -1,0 +1,239 @@
+@charset "UTF-8";
+/* Mobile version */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body,html{
+    height: 100vh;
+    overflow: hidden;
+}
+/*------------------------------  Gerais  ------------------------------*/
+button{
+    background-color: whitesmoke;
+    color: blue;
+    border: 2px solid blue;
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+}
+button:hover{
+    background-color: blue;
+    color: whitesmoke;
+}
+button:hover i{
+    color: #fff;
+    pointer-events: none;
+    /* Desabilita click nos icones - ao clica-los se é o mesmo que clicar no btn */
+}
+button span{
+    pointer-events: none;
+}
+
+input, select{
+    padding: 0.25rem 0.5rem;
+    outline: none;
+}
+.hide{
+    display: none;
+}
+
+/* ----------------------------------------------------------------------*/
+/*---------- Cabeçalho ------------------ */
+.todo-container header{
+    display: block;
+    width: 100%;
+    background-color: #015C94;
+    color: whitesmoke;
+    text-align: center;
+    padding: 1.5rem;
+}
+/* ------- Fim Cabeçalho -------------- */
+#todo-form{
+    display: none; 
+    
+}
+#categoria-form{
+    display: none;
+}
+#edit-form{
+    display: none;       
+}
+.style-forms-phone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: #015C94;
+    padding: 2rem 0;
+    gap: 0.45rem;
+    border-bottom: 1px solid #ddd;
+}
+.forms{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* justify-content: center; */
+
+}
+.style-forms-phone > h4, #todo-form > h3{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+
+/* ----------------------------------------------------------------------*/
+
+.button-controls{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap:0.25rem;
+    /* margin: 0 0.2rem; */
+}
+
+ .button-controls > button, .button-controls > input[type="date"]{
+    flex: 1;
+}
+.select-btn{
+    display: flex;
+    gap: 0.25rem;
+}
+#dateTask , #categoria-select{
+    font-size: 1rem;
+    /* width: 40%; */
+    text-align: center;
+}
+
+.style-inputs-phone{
+    width:90%;
+    height: 2rem;
+    font-size: 1rem;
+    background-color: #A9D9D0;
+    border: none;
+    border-bottom: 2px solid #015C94;
+}
+/* ----------------------------------------------------------------------*/
+.todo-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.container{
+    display: flex;
+ 
+}
+.form-control{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    gap: 0.5rem;
+    max-height: 2rem;
+}
+
+/* ----------------------------------------------------------------------*/
+
+
+/* Container de funcionalidades dos forms */
+#toolbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 1rem; */
+    width: 100%;
+    gap: 0.45rem;
+}
+
+/* --------------------------------*/
+
+
+
+
+/* ----- Botão para criar tarefas -------------------------------*/
+#add-task{
+   width: 90%;
+   font-size: 1rem;
+   font-weight: bold;
+}
+/*-------------------------------------------------------------- */
+
+
+/* ----- Botão para abrir tela para criar tarefas */
+#create-task{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background-color: #015C94;
+    color: #fff;
+    border: none;
+    position: fixed;
+    top: 85vh;
+    left: 80vw;
+}
+#create-task > span{
+    font-size: 2rem;
+}
+/*-------------------------------------------------------------- */
+
+
+/* Lista de tasks ---------------------------------------------- */
+#todo-list{
+    height: 85vh;
+    background-color: #A9D9D0;
+    overflow-y: auto;
+}
+/*-------------------------------------------------------------- */
+
+
+/* elementos de tasks ------------------------------------------------- */
+.todo{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #015C94;
+    transition: 0.3s;
+    background-color: whitesmoke;
+}
+.todo-h3-phone{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+
+.todo button{
+    margin-left: 0.4rem;
+}
+
+/* Task concluida ------- */
+.done{
+    background-color: #395169;
+}
+.done h3{
+    color: #fff;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+footer{
+    background-color: #015C94;
+}

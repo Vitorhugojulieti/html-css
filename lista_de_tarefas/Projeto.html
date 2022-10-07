@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="teste.css" media="all">
+    <link rel="stylesheet" href="bigScreens.css">
+    <lnk rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Lista de tarefas</title>
+</head>
+<body>
+    <div class="todo-container">
+        <header><!--======================================= INICIO HEADER ===============================================================-->
+            <h1>Lista de tarefas</h1>
+        </header><!--======================================= FIM HEADER ===============================================================-->
+
+        <!---------------------------------------------- Tarefas criadas  --------------------------------------------------------->
+        <div id="todo-list">
+           
+ 
+            <button type="submit" id="create-task"><span class="material-icons">add</span></button>
+        </div>
+
+        <!--======================================= INICIO FOOTER ===============================================================-->
+    <footer class="forms">
+              <!-------------------------------------------- FORMULARIO NOVAS CATEGORIAS ----------------------------------------------------->
+        <form id="categoria-form" class="style-forms-phone" >
+                <h4>Nova Categoria</h4>
+            <div class="button-controls">
+
+                <input type="text" id="input-categoria" placeholder="Nome da categoria" class="style-inputs-phone">
+    
+                <select name="color_select" id="color">
+                    <option value="">Cor</option> 
+                    <option value="blue">Azul</option>
+                    <option value="orange">Laranja</option>
+                    <option value="red">Vermelho</option>
+                    <option value="green">Verde</option>
+                </select>
+            </div>
+            <div class="button-controls">
+                <button type="submit" id="createCategoria"><span class="material-icons">done</span></button>
+                <button id="cancel-addCategoria-btn"><span class="material-icons">close</span></button>
+            </div>
+        </form>
+
+
+
+
+        <!-------------------------------------------- FORMULARIO EDITAR  ----------------------------------------------------->
+        <form id="edit-form" class="style-forms-phone">
+                <h4>Edite sua tarefa</h4>
+                <input type="text" id="edit-input" placeholder="novo nome" class="style-inputs-phone">
+
+            <div class="button-controls "><!-- button-control -->
+                <button type="submit" id="edit-taskBtn"><span class="material-icons">edit</span></button>
+                <button id="cancel-edit-btn"><span class="material-icons">close</span></button>
+            </div>
+
+        </form>
+        
+              <!------------------------------------------- FORMULARIO NOVAS TAREFAS  --------------------------------------------------------->
+            <form  id="todo-form" class="style-forms-phone">   
+                <h4>Adicione sua tarefa</h4>
+                <div id="toolbar">
+                        <input type="text" id="todo-input" placeholder="O que voce vai fazer" class="style-inputs-phone">
+                            <div class="button-controls" >
+                                    <input type="date" id="dateTask" >
+                                    <div class="select-btn">
+                                        <select id="categoria-select">
+                                            <option value="Minhas Tarefas" id="my-tasks">Minhas Tarefas</option>
+                                        </select>
+                                            <button type="submit" id="btnAddCategoria"><i class="fa-thin fa-plus"></i><span class="material-icons">add</span></button>
+                                    </div>
+                            </div>
+                            <div class="button-controls">
+                                <button type="submit" id="btnNew_task">Create</button>
+                                <button id="cancel-task-btn"><span class="material-icons">close</span></button>
+                            </div>       
+                </div>
+            </form>
+    </footer>
+
+    </div>
+    <script src="projetoTarefas.js"></script>
+    <!-- <script>
+        const element = document.getElementById('todo-form');
+    
+            function mudouTamanho(){
+            if(window.innerWidth >= 768){
+                element.style.display ='flex';
+           
+            }else{
+                element.style.display = 'none';
+            }
+        }
+    </script> -->
+</body>
+</html>

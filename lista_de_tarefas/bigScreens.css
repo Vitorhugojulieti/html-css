@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 769px) {
+    #todo-list{
+        max-width: 800px;
+        margin: auto;
+    }
+    body{
+        background-color: #A9D9D0;
+    }
+   
+    .todo-h3-phone{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .todo-h3-phone h3{
+        flex: 1;
+    }
+    #categoria-form, #edit-form, #todo-form{
+        max-width: 70%;
+    }
+
+   
+}

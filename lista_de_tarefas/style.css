@@ -1,0 +1,164 @@
+@charset "UTF-8";
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    color: #333;
+}
+/* GERAL */
+
+body{
+    background-color: blueviolet;
+    /* no projeto usa imagem no background */
+    height: 100vh;
+}
+button{
+    background-color: whitesmoke;
+    color: blue;
+    border: 2px solid blue;
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+}
+button:hover{
+    background-color: blue;
+    color: whitesmoke;
+}
+button:hover i{
+    color: #fff;
+    pointer-events: none;
+    /* Desabilita click nos icones - ao clica-los se é o mesmo que clicar no btn */
+}
+
+button i{
+    color: blue;
+}
+
+input, select{
+    padding: 0.25rem 0.5rem;
+}
+.hide{
+    display: none;
+}
+/* Todo header */
+.todo-container{
+    max-width: 550px;
+    margin: 3rem auto;
+    padding:1rem;
+    background-color: #fdfdfdfd;
+    border-radius: 20px;
+}
+
+.todo-container header{
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #ccc;
+}
+/* todo form  */
+#todo-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#todo-form, #edit-form{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#todo-form p,
+#edit-form p{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-control{
+    display: flex;
+    max-height: 2rem;
+}
+
+.form-control input{
+    margin-right: .3rem;
+}
+.form-control input{
+    width: 250px;
+}
+
+.form-control button{
+    margin: 0 0.3rem;
+}
+/* #cancel-edit-btn{
+    margin-top: 0.5rem;
+    height: 2rem;
+} */
+/*todo toolbar */
+#toolbar{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+}
+#toolbar h4{
+    margin-bottom: 0.5rem;
+}
+
+#search{
+    border-right: 1px solid #000;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+#search form{
+    display: flex;
+}
+
+#search input{
+    width: 100%;
+    margin-right: 0.3rem;
+}
+
+#filter{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+.categoria-container{
+    display: flex;
+    gap: 5px;
+}
+/* #filter select{
+    flex: 1;
+} */
+/* todo list */
+.todo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    transition: 0.3s;
+}
+.todo h3{
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.todo button{
+    margin-left: 0.4rem;
+}
+
+.done{
+    background-color: #395169;
+}
+.done h3{
+    color: #fff;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+
