@@ -40,6 +40,7 @@ function saveTodo(texto){
     // const date = dateTask.value;
     // date.toLocaleString('pt-BR',{dateStyle:'short'});
     let date = document.querySelector('#dateTask').value;//input data da tarefa
+  
 
 
     const  options = document.querySelectorAll('option');
@@ -63,9 +64,13 @@ function saveTodo(texto){
     todoTitle.innerText = texto;
     divH3.appendChild(todoTitle);
 
-    const todoDate = document.createElement("h3");
-    todoDate.innerHTML = dataAtualFormatada(date);
-    divH3.appendChild(todoDate);
+    if(date !== ""){
+        dataTask = dataAtualFormatada(date);
+        const todoDate = document.createElement("h3");
+        todoDate.innerHTML = dataTask;
+        divH3.appendChild(todoDate);
+    }
+   
 
 
      const todoCategoria = document.createElement("h3");
@@ -106,14 +111,17 @@ function saveTodo(texto){
 
 
 // -------- Função para mostrar e ocultar formulario de edição de tarefas --------------------------------
-function dataAtualFormatada(takDate){
-    var data = new Date(takDate),
+function dataAtualFormatada(taskDate){
+    if(taskDate !== "" && taskDate !== null && taskDate !== undefined){
+        var data = new Date(taskDate),
         dia  = (data.getDate()+1).toString(),
         diaF = (dia.length == 1) ? '0'+dia: dia,
         mes  = (data.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
         mesF = (mes.length == 1) ? '0'+mes : mes,
         anoF = data.getFullYear();
     return diaF+"/"+mesF+"/"+anoF;
+    }
+ 
 }
 
 // Função para editar tarefa
