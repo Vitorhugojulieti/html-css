@@ -86,9 +86,19 @@
     </div>
     <script src="projetoTarefas.js"></script>
     <script>
+        var altura = window.screen.height;
+        console.log(altura);
+
         function mudouTamanho(){
-           const footer = document.querySelector('.forms');
-           footer.style.bottom = '10vh';
+            const forms = document.querySelector('.forms');
+            if(window.screen.height  < altura){
+                forms.style.bottom = '10vh';
+                console.log('alterou');
+            }else if(window.screen.height === altura){
+                forms.style.bottom = '0vh';
+                console.log('não alterou');
+            }
+        
         }
     </script>
 </body>
