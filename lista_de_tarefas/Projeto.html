@@ -91,14 +91,13 @@
 
         function mudouTamanho(){
             const forms = document.querySelector('.forms');
-            if(window.screen.height  < altura){
-                forms.style.bottom = '10vh';
-                console.log('alterou');
-            }else if(window.screen.height === altura){
+            if(window.screen.height === altura){
                 forms.style.bottom = '0vh';
                 console.log('não alterou');
+            }else{
+                forms.style.bottom = '10vh';
+                console.log('alterou');
             }
-        
         }
     </script>
 </body>
