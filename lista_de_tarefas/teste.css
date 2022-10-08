@@ -119,8 +119,6 @@ input, select{
 }
 #dateTask , #categoria-select{
     font-size: 1rem;
-    /* width: 40%; */
-    text-align: center;
 }
 
 .style-inputs-phone{
