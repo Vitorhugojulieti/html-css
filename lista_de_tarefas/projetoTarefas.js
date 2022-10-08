@@ -277,5 +277,6 @@ newTask_Phone.addEventListener("click", (e) =>{
         inputTask_Name.focus();
 })
 exit_todoForm.addEventListener("click", (e)=>{
+    e.preventDefault()
     todoForm.style.display ='none';
 })
