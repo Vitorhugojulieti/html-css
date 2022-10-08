@@ -121,6 +121,9 @@ input, select{
     font-size: 1rem;
 }
 
+#dateTask::before{
+    content: 'Data';
+}
 .style-inputs-phone{
     width:90%;
     height: 2rem;
