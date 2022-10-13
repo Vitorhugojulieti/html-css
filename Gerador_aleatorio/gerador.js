@@ -14,28 +14,47 @@ function filters(vetor){
     for(a=min.value; a<= max.value; a++){
         intervalo.push(a);
     }
-    // console.log(intervalo);
+    console.log('intervalo');
+    console.log(intervalo);
     
-    vetor.forEach((num)=>{ 
+    // vetor.forEach((num)=>{ 
+    //     if(intervalo.includes(num)){
+    //         existentes.push(num);
+    //     }
+    // });
+    // console.log('existentes');
+    // console.log(existentes);
+
+    // intervalo.forEach((num)=>{
+    //     if(!existentes.includes(num)){
+    //         faltantes.push(num);
+    //     }
+    // });
+    // console.log('faltantes');
+    // console.log(faltantes);
+    vetor = vetor.filter(Boolean);
+    const numerosSemRepeticao = [...new Set(vetor)];
+    numerosSemRepeticao.forEach((num)=>{ 
         if(intervalo.includes(num)){
             existentes.push(num);
         }
     });
-    // console.log(existentes);
+    console.log('existentes');
+    console.log(existentes);
 
     intervalo.forEach((num)=>{
         if(!existentes.includes(num)){
             faltantes.push(num);
         }
     });
-    // console.log(faltantes);
-    vetor = vetor.filter(Boolean);
-    const numerosSemRepeticao = [...new Set(vetor)];
+    console.log('faltantes');
+    console.log(faltantes);
     if(numerosSemRepeticao.length < 15){
         let diferenca = 15 - numerosSemRepeticao.length;
 
         for(b=0; b<diferenca; b++){
-         numerosSemRepeticao.push(faltantes[b]);
+           
+            numerosSemRepeticao.push(faltantes[b+1]);
         }    
     }
     
