@@ -5,6 +5,43 @@ const btnCopy = document.querySelector('#btnCopy');
 var arrayJogos =[];
 var jogo = [];
 
+function filters(vetor){
+    let min = document.querySelector('#min');
+    let max = document.querySelector('#max');
+    var existentes = [];
+    var intervalo = [];
+    var faltantes = [];
+    for(a=min.value; a<= max.value; a++){
+        intervalo.push(a);
+    }
+    // console.log(intervalo);
+    
+    vetor.forEach((num)=>{ 
+        if(intervalo.includes(num)){
+            existentes.push(num);
+        }
+    });
+    // console.log(existentes);
+
+    intervalo.forEach((num)=>{
+        if(!existentes.includes(num)){
+            faltantes.push(num);
+        }
+    });
+    // console.log(faltantes);
+    vetor = vetor.filter(Boolean);
+    const numerosSemRepeticao = [...new Set(vetor)];
+    if(numerosSemRepeticao.length < 15){
+        let diferenca = 15 - numerosSemRepeticao.length;
+
+        for(b=0; b<diferenca; b++){
+         numerosSemRepeticao.push(faltantes[b]);
+        }    
+    }
+    
+    // console.log(numerosSemRepeticao)
+     return numerosSemRepeticao;
+}
 function addElements(){
     var numeros = document.querySelector('#numbers');
 
@@ -44,7 +81,9 @@ function generate(){
     if(quantidade.value === ""){
         alert('Insira a quantidade de jogos!')
     }else{
+        
         if(numeros.value === ""){
+            
             for(i=0; i< quantidade.value; i++){
                 for(y=0; y<15; y++){
                     let num =  Math.floor(Math.random() * (max.value - min.value) + min.value);
@@ -59,8 +98,11 @@ function generate(){
                     }    
                 }
       
-                jogo = jogo.filter(Boolean);
+                // jogo = jogo.filter(Boolean);
+
+                jogo = filters(jogo);
                 arrayJogos.push(jogo);
+                console.log(arrayJogos)
                 jogo = [];
              
             }
@@ -72,7 +114,7 @@ function generate(){
                     jogo.push(num);
                 } 
               
-                jogo = jogo.filter(Boolean);        
+                // jogo = jogo.filter(Boolean);        
                 jogo.splice(z, 0, numeros[z]); 
         
                 if(jogo.length < 15){
@@ -81,8 +123,13 @@ function generate(){
                         jogo.push(Math.floor(Math.random() * (max.value - min.value) + min.value));
                     }    
                 }
+                jogo = filters(jogo);
+                // console.log(filters(jogo));
                 arrayJogos.push(jogo);
+                console.log(arrayJogos)
                 jogo = [];
+
+                
                 
                
                 if(z === numeros.length-1){
@@ -97,12 +144,10 @@ function generate(){
             
     
         }
+        // console.log(arrayJogos);
         addElements();
     }
-
-   
-    
-    
+ 
 }
 
 
